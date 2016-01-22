@@ -1,0 +1,11 @@
+.sidebar_wrapper {
+    width: 250px;
+    border: 1px solid black;
+    float: left;
+}
+
+.sidebar1 {
+    border: 1px solid black;
+    width: inherit;
+    margin-bottom: 35px;
+}

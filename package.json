@@ -2,6 +2,7 @@
   "name": "project1",
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "normalize": "^0.3.1"
   }
 }
