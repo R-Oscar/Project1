@@ -6,6 +6,15 @@ html, body {
     height: 100%;
 }
 
+.background {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: none;
+    background-attachment: fixed;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale')";
+}
+
 .wrapper {
     min-height: 100%;
     margin-bottom: -61px;
