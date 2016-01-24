@@ -12,7 +12,7 @@ html, body {
     background-repeat: none;
     background-attachment: fixed;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale');
--ms-filter: "progid:DXImageTransfor.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale')";
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale')";
 }
 
 .wrapper {
