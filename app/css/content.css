@@ -14,7 +14,7 @@
     box-shadow: 0px 5px 10px 0px rgba(236, 232, 227, 0.75),inset 0px 6px 6px 0px rgba(255, 255, 255, 0.004);
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    padding: 40px 45px 38px 45px;
+    padding: 40px 30px 38px 45px;
 }
 
 .caption {
@@ -41,6 +41,7 @@
 
 .portrait {
     float: left;
+    border: 1px solid black;
     background-blend-mode: soft-light;
     width: 150px;
 	height: 150px;
@@ -60,6 +61,7 @@
 }
 
 .information {
+    max-width: 380px;
     margin-left: 35px;
     float: left;
     font-family: 'open_sansregular';
@@ -69,4 +71,130 @@
 
 .field {
     font-family: 'open_sanssemibold';
+}
+
+
+.skills {
+    float: right;
+    max-width: 185px;
+    padding-left: 0px;
+}
+
+.skill {
+    font-family: 'open_sanssemibold';
+    font-size: 9px;
+    line-height: 1.69;
+	color: #1e7465;
+	text-shadow: 0 1px rgba(255,255,255,.45);
+    display: inline-block;
+    background-image: url(../images/skills_main.jpg);
+    background-repeat: repeat-x;
+    margin-left: 5px;
+}
+
+.skill:before {
+    background-image: url(../images/skills_before.png);
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 22px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    padding-right: 5px;
+}
+
+.skill:after {
+    background-image: url(../images/skills_after.png);
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 22px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+.jobs {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.circle {
+    width: 53px;
+	height: 54px;
+	-webkit-border-radius: 26px 27px 27px 26px/27px;
+	-moz-border-radius: 26px 27px 27px 26px/27px;
+	border-radius: 26px 27px 27px 26px/27px;
+	background-color: #bfbfbf;
+	-webkit-box-shadow: 0 1px #fff, inset 1px 1px rgba(199,199,199,.75);
+	-moz-box-shadow: 0 1px #fff, inset 1px 1px rgba(199,199,199,.75);
+	box-shadow: 0 1px #fff, inset 1px 1px rgba(199,199,199,.75);
+    background-color: #f7f7f7;
+    float: left;
+    padding: 18px 0px 0px 17px;
+    box-sizing: border-box;
+}
+
+.jobs li:first-child:before {
+    display: none;
+}
+
+.job:before {
+    content: '';
+    display: inline-block;
+    width: 560px;
+	height: 2px;
+	-webkit-border-radius: 0 0 1px;
+	-moz-border-radius: 0 0 1px;
+	border-radius: 0 0 1px;
+	background-color: #f6f5f4;
+	-webkit-box-shadow: 0 0 3px rgba(251,251,251,.75), inset 0 1px 1px rgba(128,128,128,.29);
+	-moz-box-shadow: 0 0 3px rgba(251,251,251,.75), inset 0 1px 1px rgba(128,128,128,.29);
+	box-shadow: 0 0 3px rgba(251,251,251,.75), inset 0 1px 1px rgba(128,128,128,.29);
+    margin: 18px 0 13px 0;
+}
+
+.job {
+    min-height: 54px;
+}
+
+.text {
+    float: left;
+    max-width: 465px;
+    display: inline-block;
+    padding-left: 45px;
+    padding-top: 10px;
+    font-family: 'open_sansregular';
+    font-size: 14px;
+	color: #727070;
+}
+
+.position {
+    font-family: 'open_sanssemibold';
+}
+
+.sprite-briefcase {
+    width: 21px;
+    height: 19px;
+    background-position: -5px -5px;
+}
+
+.sprite-file {
+    width: 15px;
+    height: 20px;
+    background-position: -5px -55px;
+    margin-left: 2px;
+}
+
+.sprite-graduate {
+    width: 27px;
+    height: 18px;
+    background-position: -126px -55px;
+    margin-left: -4px;
+}
+
+.sprite-school {
+    width: 21px;
+    height: 21px;
+    background-position: -5px -114px;
 }

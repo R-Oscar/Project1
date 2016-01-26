@@ -1,4 +1,44 @@
 .footer {
     height: 61px;
-    background-color: white;
+    background-color: #f6f6f6;
+    -webkit-box-shadow: 0 -1px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 -1px rgba(0,0,0,.1);
+	box-shadow: 0 -1px rgba(0,0,0,.1);
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.06), rgba(255,255,255,.06));
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.06), rgba(255,255,255,.06));
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,.06), rgba(255,255,255,.06));
+	background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.06), rgba(255,255,255,.06));
+	background-image: linear-gradient(to top, rgba(0,0,0,.06), rgba(255,255,255,.06));
+}
+
+.footer_wrapper {
+    width: 495px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.sprite-locked {
+    width: 18px;
+    height: 21px;
+    background-position: -126px -83px;
+}
+
+.authorize {
+    float: left;
+    font-family: 'open_sansbold';
+    color: #727070;
+	text-shadow: 0 1px 1px rgba(255,255,255,.85);
+    font-size: 14px;
+}
+
+.enter {
+    margin-left: 10px;
+}
+
+.copyright {
+    font-family: 'open_sanslight';
+    font-size: 12px;
+	color: #727070;
+    float: right;
+    padding-top: 5px;
 }

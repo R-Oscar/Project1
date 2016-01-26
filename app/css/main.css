@@ -9,10 +9,16 @@ html, body {
 .background {
     background-image: url(../images/background.jpg);
     background-size: cover;
-    background-repeat: none;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale');
 -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale')";
+}
+
+.sprite {
+    background-image: url(../images/spritesheet.png);
+    background-repeat: no-repeat;
+    float: left;
+    list-style-type: none;
 }
 
 .wrapper {
