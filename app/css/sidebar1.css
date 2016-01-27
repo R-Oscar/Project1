@@ -48,12 +48,6 @@
     color: #727070;
 }
 
-.active_link {
-    color: #1e7465;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
-}
-
 .button:hover {
     background-color: #d4d2d2;
     background-image: -webkit-linear-gradient(bottom, rgb(194,192,192) 0%, rgb(227,225,225) 87%, rgb(230,228,228) 90%, rgb(232,231,231) 100%);
@@ -74,6 +68,9 @@
     box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.16),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3);
     border: 1px solid #2fa185;
     box-sizing: border-box;
+    color: #1e7465;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
 }
 
 .heading {
@@ -93,24 +90,27 @@
     border-top-left-radius: 3px;
 }
 
-.heading_menu {
-    min-height: 38px;
+.contact_menu {
+    position: relative;
+    padding: 10px 0px 10px 60px;
+    display: block;
+    color: rgb(114, 112, 112);
+    height: 38px;
     box-sizing: border-box;
     font-family: 'open_sansregular';
-  font-size: 14px;
-  color: rgb(114, 112, 112);
-  line-height: 1.2;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(214, 213, 211);
+    font-size: 14px;
+    line-height: 1.2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(214, 213, 211);
     background-color: #fff;
-  background-image: -moz-linear-gradient( 90deg, rgb(233,231,231) 0%, rgba(251,249,249,0) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(233,231,231) 0%, rgba(251,249,249,0) 100%);
-  background-image: -ms-linear-gradient( 90deg, rgb(233,231,231) 0%, rgba(251,249,249,0) 100%);
-  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.35),inset 0px 2px 2px 0px rgba(114, 112, 112, 0.1);
+    background-image: -moz-linear-gradient( 90deg, rgb(233,231,231) 0%, rgba(251,249,249,0) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(233,231,231) 0%, rgba(251,249,249,0) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(233,231,231) 0%, rgba(251,249,249,0) 100%);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.35),inset 0px 2px 2px 0px rgba(114, 112, 112, 0.1);
 }
 
-.heading_menu:hover {
+.contact_menu:hover {
 	-webkit-box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
 	-moz-box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
 	box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
@@ -119,35 +119,52 @@
 	background-image: -o-linear-gradient(bottom, rgba(224,197,145,.45), rgba(251,249,249,0));
 	background-image: -ms-linear-gradient(bottom, rgba(224,197,145,.45), rgba(251,249,249,0));
 	background-image: linear-gradient(to top, rgba(224,197,145,.45), rgba(251,249,249,0));
+    text-decoration: underline;
 }
 
-.contact {
-    margin-left: 95px;
+.contacts {
+    padding: 0px;
+    list-style: none;
 }
 
-.contact:before {
+.contact_link:before {
+    position: absolute;
+    left: 30px;
+    top: 7px;
+    content: '';
     display: inline-block;
-    content: url(../images/arrow.png);
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    transform: rotate(45deg) skew(13deg, 13deg);
+    border-top: 1px solid #e3c17e;
+    border-right: 1px solid #e3c17e;
+    background-position: -36px -5px;
+}
+
+.sprite-email {
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    width: 16px;
+    height: 12px;
+    background-position: -36px -5px;
 }
 
 .sprite-skype {
+    position: absolute;
+    left: 15px;
+    top: 9px;
     width: 19px;
     height: 19px;
     background-position: -36px -114px;
 }
 
 .sprite-telephone {
+    position: absolute;
+    left: 15px;
+    top: 9px;
     width: 16px;
     height: 21px;
     background-position: -65px -114px;
-}
-
-.sprite-email {
-    width: 16px;
-    height: 12px;
-    background-position: -36px -5px;
-}
-
-.arrow {
-    margin: -11px 38px -13px -3px;
 }

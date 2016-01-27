@@ -6,9 +6,16 @@ html, body {
     height: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
 .background {
     background-image: url(../images/background.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale');
 -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale')";
@@ -33,6 +40,7 @@ html, body {
 }
 
 .container {
+    font-family: 'open_sansregular';
     width: 960px;
     margin: 35px auto;
 }

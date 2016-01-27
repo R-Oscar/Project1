@@ -41,6 +41,7 @@
     height: 40px;
     display: inline-block;
     margin-left: 8px;
+    font-size: 0px;
 }
 
 .sprite-facebook {
