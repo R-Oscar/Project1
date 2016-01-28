@@ -4,6 +4,8 @@
 
 html, body {
     height: 100%;
+    width: 100%;
+    min-width: 1190px;
 }
 
 a {
@@ -44,8 +46,8 @@ h1, h2, h3, h4, h5 {
 
 .container {
     font-family: 'open_sansregular';
-    max-width: 960px;
-    min-width: 320px;
+    width: 960px;
+    min-width: 960px;
     margin: 35px auto;
 }
 

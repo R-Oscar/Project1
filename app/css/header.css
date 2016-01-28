@@ -1,10 +1,12 @@
 .header {
+    width: 100%;
     background-color: #727070;
     background-image: url(../images/bg-header.png);
 }
 
 .header_wrapper {
-    max-width: 1190px;
+    width: 1190px;
+    min-width: 1190px;
     margin: 0 auto;
 }
 
