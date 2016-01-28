@@ -12,7 +12,7 @@ gulp.task('modernizr', function () {
         ],
 
         // Подключаем необходимый набор тестов
-        "tests" : ['placeholder', 'cssanimations'],
+        "tests" : ['placeholder', 'cssanimations', 'opacity'],
 
         // Собрать минифицированную версию
         "uglify" : true,

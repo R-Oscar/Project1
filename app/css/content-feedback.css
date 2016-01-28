@@ -1,11 +1,23 @@
+.form_row {
+    margin-bottom: 15px;
+}
+
+.left_col {
+    float: left;
+}
+
+.right_col {
+    float: right;
+}
+
 .form_block {
     width: 400px;
-    margin: 0px 80px;
+    margin: 0px auto;
 }
 
 .input {
-    height: 28px;
-    width: 165px;
+    height: 41px;
+    width: 100%;
     padding-left: 10px;
 	-webkit-border-radius: 2px/4px;
 	-moz-border-radius: 2px/4px;
@@ -21,6 +33,9 @@
 	background-image: -ms-linear-gradient(bottom, rgba(233,231,231,.45), rgba(251,249,249,0));
 	background-image: linear-gradient(to top, rgba(233,231,231,.45), rgba(251,249,249,0));
     font-size: 12px;
+    font-family: 'open_sanslight';
+    color: #c7c6c6;
+    box-sizing: border-box;
 }
 
 .input:focus {
@@ -35,18 +50,16 @@
 }
 
 .text_block {
-    float: left;
-    margin: 6px 20px 0px 0px;
+    width: 190px;
 }
 
 .textarea {
-    width: 364px;
     height: 180px;
     resize: none;
 }
 
 .captcha {
-    width: 180px;
+    width: 100%;
     height: 90px;
     float: left;
     content: '';
@@ -58,22 +71,20 @@
 }
 
 .form_button {
-    margin: 30px;
-    width: 121px;
+    margin: 0px 30px;
+    width: 122px;
 	height: 37px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	background-color: #fbf9f9;
-	-webkit-box-shadow: 0 2px 1px rgba(9,9,9,.16), inset 0 1px rgba(255,255,255,.3);
-	-moz-box-shadow: 0 2px 1px rgba(9,9,9,.16), inset 0 1px rgba(255,255,255,.3);
-	box-shadow: 0 2px 1px rgba(9,9,9,.16), inset 0 1px rgba(255,255,255,.3);
 	border: solid 1px #c3c2c2;
     font-family: 'open_sanssemibold';
     font-size: 14px;
 }
 
 .ok_button {
+    background-color: #3aa087;
 	background-image: -webkit-linear-gradient(bottom, #43b796, #80e8cb);
 	background-image: -moz-linear-gradient(bottom, #43b796, #80e8cb);
 	background-image: -o-linear-gradient(bottom, #43b796, #80e8cb);
@@ -84,11 +95,6 @@
 }
 
 .ok_button:hover {
-    width: 121px;
-	height: 37px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
 	-webkit-box-shadow: inset 0 1px rgba(255,255,255,.3);
 	-moz-box-shadow: inset 0 1px rgba(255,255,255,.3);
 	box-shadow: inset 0 1px rgba(255,255,255,.3);
@@ -109,11 +115,10 @@
 	background-image: -o-linear-gradient(bottom, #e9e6e4, #fbf9f9 94%, #fff);
 	background-image: -ms-linear-gradient(bottom, #e9e6e4, #fbf9f9 94%, #fff);
 	background-image: linear-gradient(to top, #e9e6e4, #fbf9f9 94%, #fff);
+    color: #727070;
 }
 
 .cancel_button:hover {
-	width: 121px;
-	height: 37px;
 	-webkit-box-shadow: inset 0 -2px 3px rgba(41,41,41,.05), inset 0 0 3px rgba(202,202,202,.61);
 	-moz-box-shadow: inset 0 -2px 3px rgba(41,41,41,.05), inset 0 0 3px rgba(202,202,202,.61);
 	box-shadow: inset 0 -2px 3px rgba(41,41,41,.05), inset 0 0 3px rgba(202,202,202,.61);
@@ -122,4 +127,11 @@
 	background-image: -o-linear-gradient(bottom, #c2c0c0, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7);
 	background-image: -ms-linear-gradient(bottom, #c2c0c0, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7);
 	background-image: linear-gradient(to top, #c2c0c0, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7);
+}
+
+.ie-placeholder {
+    font-size: 12px;
+    font-family: 'open_sanslight';
+    color: #c7c6c6;
+    margin-top: 5px;
 }

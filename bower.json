@@ -4,5 +4,8 @@
     "jquery": "1.8",
     "normalize-css": "normalize.css#~3.0.3",
     "normalize-strings": "normalize#~1.0.4"
+  },
+  "devDependencies": {
+    "jquery-placeholder": "~2.3.1"
   }
 }

@@ -14,12 +14,14 @@ h1, h2, h3, h4, h5 {
     margin: 0;
 }
 
-.background {
-    background-image: url(../images/background.jpg);
+.opacity .background {
+    background: url(../images/background.jpg) no-repeat center center fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale');
--ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale')";
+}
+
+.no-opacity .background {
+    background-color: #eae8ad;
 }
 
 .sprite {
@@ -30,6 +32,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .wrapper {
+    position: relative;
     min-height: 100%;
     margin-bottom: -61px;
 }
@@ -42,7 +45,8 @@ h1, h2, h3, h4, h5 {
 
 .container {
     font-family: 'open_sansregular';
-    width: 960px;
+    max-width: 960px;
+    min-width: 320px;
     margin: 35px auto;
 }
 

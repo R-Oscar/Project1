@@ -77,6 +77,10 @@
     text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 }
 
+.no-opacity .hidden_link {
+    visibility: hidden;
+}
+
 .image_wrapper {
     position: relative;
 }

@@ -4,7 +4,7 @@
 }
 
 .header_wrapper {
-    width: 1190px;
+    max-width: 1190px;
     margin: 0 auto;
 }
 
@@ -28,19 +28,23 @@
     padding: 0px;
     float: right;
     width: 190px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 26px;
+    padding-bottom: 20px;
 }
 
-.social_media a:first-child {
+.social_media_wrapper {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.social_media li:first-child {
     margin-left: 0px;
 }
 
-.social_media_container {
+.social_media_link {
     width: 38px;
     height: 40px;
-    display: inline-block;
-    margin-left: 8px;
+    display: block;
     font-size: 0px;
 }
 

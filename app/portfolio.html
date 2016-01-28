@@ -2,8 +2,11 @@
 <html lang="ru-RU">
 <head>
     <meta charset="UTF-8">
-    <title>Сайт-визитка</title>
+    <title>LCC: Портфолио</title>
     
+    <!-- Favicon -->
+    <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+    <link rel="icon" href="images/favicon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="bower/normalize-css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -25,44 +28,41 @@
                         <img src="images/logo.png" alt="LoftSchool. От мыслителя к создателю.">
                     </a>
                     <ul class="social_media">
-                        <a href="http://facebook.com" class="social_media_container"><li class="sprite sprite-facebook">Facebook</li></a>
-                        <a href="https://vk.com/id43317791" class="social_media_container"><li class="sprite sprite-vk">VK</li></a>
-                        <a href="http://twitter.com" class="social_media_container"><li class="sprite sprite-twitter">Twitter</li></a>
-                        <a href="https://github.com/R-Oscar/" class="social_media_container"><li class="sprite sprite-github">Github</li></a>
+                       <li class="sprite sprite-facebook social_media_wrapper"><a href="http://facebook.com" class="social_media_link">Facebook</a></li>
+                       <li class="sprite sprite-vk social_media_wrapper"><a href="https://vk.com/id43317791" class="social_media_link">VK</a></li>
+                       <li class="sprite sprite-twitter social_media_wrapper"><a href="http://twitter.com" class="social_media_link">Twitter</a></li>
+                       <li class="sprite sprite-github social_media_wrapper"><a href="https://github.com/R-Oscar/" class="social_media_link">github</a></li>
                     </ul>
                 </div>
             </header>
             <main class="container cf">
                 <!-- Sidebar Wrapper -->
-                <div class="sidebar_wrapper">
-                    <aside class="sidebar1">
-                        <a href="index.html" class="menu_link"><nav class="button">Обо мне</nav></a>
-                        <nav class="active">Мои работы</nav>
-                        <a href="feedback.html" class="menu_link"><nav class="button">Обратная связь</nav></a>
-                    </aside>
-                    <aside class="sidebar1">
+                <aside class="sidebar_wrapper">
+                    <ul class="sidebar1 menu">
+                        <li class="button"><a href="index.html" class="menu_link">Обо мне</a></li>
+                        <li class="active">Мои работы</li>
+                        <li class="button"><a href="feedback.html" class="menu_link">Обратная связь</a></li>
+                    </ul>
+                    <section class="sidebar1">
                         <h2 class="heading">Контакты</h2>
                         <ul class="contacts">
-                            <a href="mailto:askar.payment@gmail.com" class="contact_menu">
-                                <i class="sprite sprite-email"></i>
-                                <li class="contact_link">askar.payment@gmail.com</li>
-                            </a>
-                            <a href="tel:+79871231212" class="contact_menu">
-                                <i class="sprite sprite-telephone"></i>
-                                <li class="contact_link">+79871231212</li>
-                            </a>
-                            <a href="skype:askar.garifullin" class="contact_menu">
-                                <i class="sprite sprite-skype"></i>
-                                <li class="contact_link">askar.garifullin</li>
-                            </a>
+                            <li class="contact_menu">
+                                <a href="mailto:askar.payment@gmail.com" class="contact_link"><i class="sprite sprite-email"></i>askar.payment@gmail.com</a>
+                            </li>
+                            <li class="contact_menu">
+                                <a href="tel:+79871231212" class="contact_link"><i class="sprite sprite-telephone"></i>+79871231212</a>
+                            </li>
+                            <li class="contact_menu">
+                                <a href="skype:askar.garifullin" class="contact_link"><i class="sprite sprite-skype"></i>askar.garifullin</a>
+                            </li>
                         </ul>
-                    </aside>
-                </div>
+                    </section>
+                </aside>
                 <!-- /Sidebar Wrapper -->
                 <!-- Content Wrapper -->
                 <div class="content_wrapper">
                     <h1 class="caption">Мои работы</h1>
-                    <section class="content">
+                    <div class="content">
                         <a href="#" class="preview">
                             <div class="image_wrapper">
                                 <img src="images/preview/pic1.jpg" alt="a-industry" class="preview_image">
@@ -111,9 +111,9 @@
                              </div>
                              <header class="add_project">Добавить проект</header>
                          </a>
-                    </section>
-                <!-- /Content Wrapper -->
+                    </div>
                 </div>
+                <!-- /Content Wrapper -->
             </main>
         </div>
         <footer class="footer">

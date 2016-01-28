@@ -4,8 +4,6 @@
 }
 
 .content {
-    
-    width: inherit;
     box-sizing: border-box;
     border: 1px solid #b6b6b6;
     margin-bottom: 35px;
@@ -42,12 +40,13 @@
     width: 150px;
 	height: 150px;
 	background-color: #f7f6f5;
-	border: solid 10px #dbdbdb;
+	border: solid 10px #fff;
     border-radius: 100px;
+    box-sizing: border-box;
 }
 
 .information {
-    max-width: 380px;
+    max-width: 340px;
     margin-left: 35px;
     float: left;
     font-size: 14px;
@@ -181,4 +180,8 @@
     width: 21px;
     height: 21px;
     background-position: -5px -114px;
+}
+
+.row {
+    padding-bottom: 10px;
 }
