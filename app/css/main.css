@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5 {
 .background {
     background-image: url(../images/background.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale');
 -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/background.jpg', sizingMethod='scale')";
 }

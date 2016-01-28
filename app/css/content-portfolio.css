@@ -72,20 +72,13 @@
     position: absolute;
     top: 40%;
     transform: scale(0);
-    color: #727070;
+    color: #000;
     font-family: 'open_sanssemibold';
     text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 }
 
 .image_wrapper {
     position: relative;
-}
-
-.image_wrapper:hover {
-	background-color: #f7e5a5;
-}
-.hidden_link:hover {
-	background-color: #f7e5a5;
 }
 
 .image_wrapper:hover .hidden_link {
@@ -95,15 +88,19 @@
     -webkit-transition: all .5s ease-in-out;
 }
 
+.image_wrapper:hover .preview_image {
+    background-color: #f7e5a5;
+}
+
 .preview_image {
     display: block;
     max-width: 100%;
 }
 
-.preview_image:hover, hidden.link:hover {
-    -moz-opacity: 0.20;
-	opacity:.20;
-	filter: alpha(opacity=20);
+.image_wrapper:hover {
+    -moz-opacity: 0.40;
+	opacity:.40;
+	filter: alpha(opacity=40);
 }
 
 .new_preview:hover {

@@ -50,7 +50,6 @@
     max-width: 380px;
     margin-left: 35px;
     float: left;
-    font-family: 'open_sansregular';
     font-size: 14px;
 	color: #727070;
 }
@@ -150,7 +149,6 @@
     display: inline-block;
     padding-left: 45px;
     padding-top: 10px;
-    font-family: 'open_sansregular';
     font-size: 14px;
 	color: #727070;
 }
