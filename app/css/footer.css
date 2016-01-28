@@ -31,8 +31,6 @@
 	text-shadow: 0 1px 1px rgba(255,255,255,.85);
     font-size: 14px;
     padding-left: 22px;
-    content: '';
-    display: inline-block;
     width: 18px;
     height: 21px;
     background: url(../images/spritesheet.png) no-repeat -126px -83px;
