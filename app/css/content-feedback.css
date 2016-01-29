@@ -38,6 +38,10 @@
     box-sizing: border-box;
 }
 
+.no-opacity .input {
+    line-height: 2;
+}
+
 .input:focus {
     outline: none;
 }
@@ -81,6 +85,10 @@
 	border: solid 1px #c3c2c2;
     font-family: 'open_sanssemibold';
     font-size: 14px;
+}
+
+.form_button:focus {
+    outline: none;
 }
 
 .ok_button {
@@ -130,8 +138,8 @@
 }
 
 .ie-placeholder {
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'open_sanslight';
     color: #c7c6c6;
-    margin-top: 5px;
+    line-height: 2;
 }
