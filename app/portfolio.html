@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/sidebar2.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/content-portfolio.css">
     <link rel="stylesheet" href="fonts/stylesheet.css">
     <!--  Modernizr  -->
@@ -105,22 +106,50 @@
                             <div class="description">Landing page по продажи франшизы снежного бизнеса.</div>
                         </a><!--
                      -->
-                         <a href="#" class="preview new_preview cf">
+                         <a href="#" class="preview new_preview cf" id="new_project">
                              <div class="circle align_center">
                                  <i class="polaroid"></i>
                              </div>
-                             <header class="add_project">Добавить проект</header>
+                             <header class="add_project_sign">Добавить проект</header>
                          </a>
+                    </div>
+                    <div id="add_project">
+                        <img src="images/X.png" class="b-close" height="14" width="14" id="add_project_close"></img>
+                        <form action="#">
+                            <!-- PROJECT NAME -->
+                            <label for="project_name" class="label">Название проекта</label>
+                            <input type="text" class="input" id="project_name" placeholder="Введите название">
+                            
+                            <!-- PROJECT PICTURE -->
+                            <label for="project_name" class="label">Картинка проекта</label>
+                            <div class="upload">
+                                <input type="text" class="input" id="project_picture" placeholder="Загрузите изображение">
+                            </div>
+                            <!-- PROJECT URL -->
+                            <label for="project_url" class="label">URL проекта</label>
+                            <input type="text" class="input" id="project_url" placeholder="Добавьте ссылку">
+                            <!-- PROJECT DESCRIPTION -->
+                            <label for="project_desc" class="label">Описание проекта</label>
+                            <textarea class="input textarea" id="project_desc" placeholder="Пара слов о Вашем проекте"></textarea>
+                            <!-- PROJECT ADD BUTTON -->
+                            <div class="button_wrapper">
+                                <button class="form_button ok_button" id="send_project_form">Добавить</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <!-- /Content Wrapper -->
             </main>
         </div>
+
         <footer class="footer">
             <div class="footer_wrapper cf">
                 <a href="#" class="authorize">вход</a>
                 <div class="copyright">© 2016. Это мой сайт, пожалуйста, не копируйте и не воруйте его!</div>
             </div>
         </footer>
+        <script src="bower/jquery/jquery.min.js"></script>
+        <script src="bower/bPopup/jquery.bpopup.min.js"></script>
+        <script src="js/main.js"></script>
 </body>
 </html>

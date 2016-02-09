@@ -1,6 +1,7 @@
 .content_wrapper {
     width: 650px;
     float: right;
+    position: relative;
 }
 
 .content {
