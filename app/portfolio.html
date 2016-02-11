@@ -118,19 +118,27 @@
                         <form action="#">
                             <!-- PROJECT NAME -->
                             <label for="project_name" class="label">Название проекта</label>
-                            <input type="text" class="input" id="project_name" placeholder="Введите название">
-                            
+                            <div class="input_block">
+                                <input type="text" class="input" id="project_name" placeholder="Введите название">
+                            </div>
+                                                       
                             <!-- PROJECT PICTURE -->
                             <label for="project_name" class="label">Картинка проекта</label>
-                            <div class="upload">
-                                <input type="text" class="input" id="project_picture" placeholder="Загрузите изображение">
+                            <div class="input_block">
+                                <div class="upload">
+                                    <input type="text" class="input" id="project_picture" placeholder="Загрузите изображение">
+                                </div>
                             </div>
                             <!-- PROJECT URL -->
                             <label for="project_url" class="label">URL проекта</label>
-                            <input type="text" class="input" id="project_url" placeholder="Добавьте ссылку">
+                            <div class="input_block">
+                                <input type="text" class="input" id="project_url" placeholder="Добавьте ссылку">
+                            </div>
                             <!-- PROJECT DESCRIPTION -->
                             <label for="project_desc" class="label">Описание проекта</label>
-                            <textarea class="input textarea" id="project_desc" placeholder="Пара слов о Вашем проекте"></textarea>
+                            <div class="input_block">
+                                <textarea class="input textarea" id="project_desc" placeholder="Пара слов о Вашем проекте"></textarea>
+                            </div>
                             <!-- PROJECT ADD BUTTON -->
                             <div class="button_wrapper">
                                 <button class="form_button ok_button" id="send_project_form">Добавить</button>

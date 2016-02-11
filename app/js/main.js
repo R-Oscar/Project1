@@ -1,80 +1,113 @@
-// Объявление модуля
-var myModule = (function () {
-	var _ttCounter = 0;
-	var _ttOutlineColor = '#e0ad9a';
-	// Инициализирует наш модуль
-	function init () {
-		//console.log("Main module initialized");
-		_setUpListners();
-	};
+$(document).ready(
+	function() {
+		// Объявление модуля
+		var myModule = (function () {
+			var _ttCounter = 0;
+			var _ttOutlineColor = '#e0ad9a';
+			// Инициализирует наш модуль
+			function init () {
+				//console.log("Main module initialized");
+				_setUpListners();
+			};
 
-	// Прослушивает события 
-	function _setUpListners () {
-		$('#new_project').on('click', _showModal);
-		$('#send_project_form').on('click', _validateFields);
-	};
+			// Прослушивает события 
+			function _setUpListners () {
+				$('#new_project').on('click', _showModal);
+				$('#send_project_form').on('click', _validateFields);
+				$('input, textarea').on('keydown', function (e) {
+					_removeToolTip($(this));
+				});
+				//$('#project_picture').on('keydown', _removeToolTip(($('#project_picture'))));
+			};
 
- 	// Открытие модального окна
-	_showModal = function (e) {
-		e.preventDefault();
-		//console.log('Activated popup');
-		//console.log($('#add_project'));
-		$('#add_project').bPopup({
-			speed: 650,
-			transition: 'slideDown'
-		});
-	};
+			_testFunc = function (event) {
+				console.log(event);
+			}
 
-	// Валидация формы
-	_validateFields = function (e) {
-		e.preventDefault();
-		var name = $('#project_name').val();
-		var pic = $('#project_picture').val();
-		var url = $('#project_url').val();
-		var desc = $('#project_desc').val();
+		 	// Открытие модального окна
+			_showModal = function (e) {
+				e.preventDefault();
+				//console.log('Activated popup');
+				//console.log($('#add_project'));
+				$('#add_project').bPopup({
+					speed: 650,
+					transition: 'slideDown',
+					onClose: _removeToolTips
+				});
+			};
 
-		if (name.trim() === '')
-		{
-			_createToolTip($('#project_name'), 'введите название');
-		}
+			// Валидация формы
+			_validateFields = function (e) {
+				e.preventDefault();
+				var name = $('#project_name').val();
+				var pic = $('#project_picture').val();
+				var url = $('#project_url').val();
+				var desc = $('#project_desc').val();
 
-		if (pic.trim() === '')
-		{
-			_createToolTip($('#project_picture'), 'изображение');
-		}
+				if (name.trim() === '')
+				{
+					_createToolTip($('#project_name'), 'введите название');
+				}
 
-		if (url.trim() === '')
-		{
-			_createToolTip($('#project_url'), 'ссылка на проект');
-		}
+				if (pic.trim() === '')
+				{
+					_createToolTip($('#project_picture'), 'изображение');
+				}
 
-		if (desc.trim() === '')
-		{
-			_createToolTip($('#project_desc'), 'описание проекта');
-		}
-	};
+				if (url.trim() === '')
+				{
+					_createToolTip($('#project_url'), 'ссылка на проект');
+				}
 
-	// Создание тултипа
-	_createToolTip = function (element, text) {
-		element.css('outline', '1px solid ' + _ttOutlineColor);
-		var wrapper = element.wrap('<div class="input_block"></div>').parent();
-		wrapper.append('<div class="error_block tooltip' + _ttCounter + '">' + text + '</div>');
-		var left = wrapper.find('div').width();
-		var tooltip = $('.tooltip' + _ttCounter);
-		tooltip.css({
-			'top': '8px',
-			'left': -left - 17 + 'px'
-		});
+				if (desc.trim() === '')
+				{
+					_createToolTip($('#project_desc'), 'описание проекта');
+				}
+			};
 
-		_ttCounter++;
-	}
+			// Создание тултипа
+			_createToolTip = function (element, text) {
+				element.css('outline', '1px solid ' + _ttOutlineColor);
+				var wrapper = element.parent();
+				wrapper.append('<div class="error_block tooltip' + _ttCounter + '">' + text + '</div>');
+				var left = wrapper.find('div').width();
+				var tooltip = $('.tooltip' + _ttCounter);
+				tooltip.css({
+					'top': '8px',
+					'left': -left - 17 + 'px'
+				});
 
-	// Возвращаем объект (публичные методы) 
-	return {
-		init: init
-	};
+				_ttCounter++;
+			}
 
-})();
+			// Удаление тултипа
+			_removeToolTip = function (element) {
+				element.css('outline', 'none');
+				element.next().remove();
+			}
 
-// Вызов модуля
-myModule.init();
+			// Удаление всех тултипов
+			_removeToolTips = function () {
+				console.log('removing all tooltips');
+				_removeToolTip($('#project_name'));
+				_removeToolTip($('#project_url'));
+				_removeToolTip($('#project_picture'));
+				_removeToolTip($('#project_desc'));
+
+				$('#project_name').val('');
+				$('#project_url').val('');
+				$('#project_picture').val('');
+				$('#project_desc').val('');
+				_ttCounter = 0;
+			}
+
+			// Возвращаем объект (публичные методы) 
+			return {
+				init: init
+			};
+
+		})();
+
+	// Вызов модуля
+	myModule.init();		
+	})
