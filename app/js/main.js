@@ -4,6 +4,12 @@ $(document).ready(
 		var myModule = (function () {
 			var _ttCounter = 0;
 			var _ttOutlineColor = '#e0ad9a';
+			var elements = 	{
+								name: $('#project_name'), 
+								pic: $('#project_picture'), 
+								url: $('#project_url'), 
+								desc: $('#project_desc')
+						 	};
 			// Инициализирует наш модуль
 			function init () {
 				//console.log("Main module initialized");
@@ -12,23 +18,47 @@ $(document).ready(
 
 			// Прослушивает события 
 			function _setUpListners () {
+				// Вызов модального окна
 				$('#new_project').on('click', _showModal);
+				// Вызов обработчика формы
 				$('#send_project_form').on('click', _validateFields);
+				// Удаление тултипа при изменении инпутов
 				$('input, textarea').on('keydown', function (e) {
 					_removeToolTip($(this));
 				});
-				//$('#project_picture').on('keydown', _removeToolTip(($('#project_picture'))));
-			};
+				$('#file').change(function(event) {
+					var path = $.trim($(this).val());
+					var caption = '';
+					if (path === '') // Путь пустой
+					{
+						caption = 'Загрузите изображение';
+						elements.pic.val('');
+					}
+					else
+					{
+						if (_hasToolTip(elements.pic))
+							_removeToolTip(elements.pic);
+						elements.pic.val(path);
+						caption = path;
+					}
+					$("label.input").text(caption);
+				});
+				// alert(($.browser.msie) ? "IE" : "NOT IE");
 
-			_testFunc = function (event) {
-				console.log(event);
-			}
+				// IE8 FIX: Label for
+				if ($.browser.msie) {
+				  	$("label").click(function(){
+					    if ($(this).attr("for") != "")
+					        $("#" + $(this).attr("for")).click();
+						}
+					);
+				}
+			};
 
 		 	// Открытие модального окна
 			_showModal = function (e) {
 				e.preventDefault();
 				//console.log('Activated popup');
-				//console.log($('#add_project'));
 				$('#add_project').bPopup({
 					speed: 650,
 					transition: 'slideDown',
@@ -39,29 +69,29 @@ $(document).ready(
 			// Валидация формы
 			_validateFields = function (e) {
 				e.preventDefault();
-				var name = $('#project_name').val();
-				var pic = $('#project_picture').val();
-				var url = $('#project_url').val();
-				var desc = $('#project_desc').val();
+				var name = elements.name.val();
+				var pic = elements.pic.val();
+				var url = elements.url.val();
+				var desc = elements.desc.val();
 
-				if (name.trim() === '')
+				if ($.trim(name) === '')
 				{
-					_createToolTip($('#project_name'), 'введите название');
+					_createToolTip(elements.name, 'введите название');
 				}
 
-				if (pic.trim() === '')
+				if ($.trim(pic) === '')
 				{
-					_createToolTip($('#project_picture'), 'изображение');
+					_createToolTip(elements.pic, 'изображение');
 				}
 
-				if (url.trim() === '')
+				if ($.trim(url) === '')
 				{
-					_createToolTip($('#project_url'), 'ссылка на проект');
+					_createToolTip(elements.url, 'ссылка на проект');
 				}
 
-				if (desc.trim() === '')
+				if ($.trim(desc) === '')
 				{
-					_createToolTip($('#project_desc'), 'описание проекта');
+					_createToolTip(elements.desc, 'описание проекта');
 				}
 			};
 
@@ -83,22 +113,24 @@ $(document).ready(
 			// Удаление тултипа
 			_removeToolTip = function (element) {
 				element.css('outline', 'none');
-				element.next().remove();
+				element.parent().find('div.error_block').remove();
 			}
 
 			// Удаление всех тултипов
 			_removeToolTips = function () {
-				console.log('removing all tooltips');
-				_removeToolTip($('#project_name'));
-				_removeToolTip($('#project_url'));
-				_removeToolTip($('#project_picture'));
-				_removeToolTip($('#project_desc'));
+				// console.log('removing all tooltips');
+				$.each(elements, function(index, val) {
+					 _removeToolTip(val);
+					 val.val('');
+				});
 
-				$('#project_name').val('');
-				$('#project_url').val('');
-				$('#project_picture').val('');
-				$('#project_desc').val('');
+				$("label.input").text('Загрузите изображение');
 				_ttCounter = 0;
+			}
+
+			// Есть ли тултип у элемента
+			_hasToolTip = function (element) {
+				return element.parent().find('div.error_block') !== '';
 			}
 
 			// Возвращаем объект (публичные методы) 
@@ -108,6 +140,7 @@ $(document).ready(
 
 		})();
 
-	// Вызов модуля
-	myModule.init();		
-	})
+		// Вызов модуля
+		myModule.init();		
+	}
+)

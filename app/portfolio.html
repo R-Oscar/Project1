@@ -123,11 +123,10 @@
                             </div>
                                                        
                             <!-- PROJECT PICTURE -->
-                            <label for="project_name" class="label">Картинка проекта</label>
+                            <label for="file" class="label">Картинка проекта</label>
                             <div class="input_block">
-                                <div class="upload">
-                                    <input type="text" class="input" id="project_picture" placeholder="Загрузите изображение">
-                                </div>
+                                <label for="file" class="input upload_input" id="project_picture">Загрузите изображение</label>
+                                <input type="file" class="file_hidden" id="file" accept="image/*">
                             </div>
                             <!-- PROJECT URL -->
                             <label for="project_url" class="label">URL проекта</label>
@@ -159,5 +158,7 @@
         <script src="bower/jquery/jquery.min.js"></script>
         <script src="bower/bPopup/jquery.bpopup.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="bower/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <script>$('input, textarea').placeholder({customClass:'ie-placeholder'});</script>
 </body>
 </html>

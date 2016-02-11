@@ -163,15 +163,18 @@
     right: 8px;
 }
 
-.upload {
-    width: 316px;
-    position: relative;
+.upload_input {
+    cursor: pointer;
+    display: inline-block;
+    width: 266px;
+    padding: 10px;
 }
 
-.upload:after {
+.upload_input:after {
+    cursor: pointer;
     position: absolute;
-    display: inline-block;
     content: url(../images/upload.png);
+    display: inline-block;
     box-sizing: border-box;
     padding-top: 10px;
     padding-left: 11px;
@@ -216,6 +219,8 @@
     color: #9a4e32;
     text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
     padding: 5px 3px;
+    box-sizing: border-box;
+    height: 27px;
 }
 
 .error_block:before {
@@ -240,4 +245,12 @@
 
 .input_block {
     position: relative;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.file_hidden {
+    display: none;
 }
