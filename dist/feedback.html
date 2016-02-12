@@ -21,7 +21,7 @@
         <div class="wrapper">
             <header class="header">
                 <div class="header_wrapper cf">
-                    <a href="index.html" class="logo_container">
+                    <a href="/" class="logo_container">
                         <img src="images/logo.png" alt="LoftSchool. От мыслителя к создателю.">
                     </a>
                     <ul class="social_media">
@@ -60,25 +60,31 @@
                 <div class="content_wrapper">
                     <h1 class="caption">У Вас есть интересный проект? Напишите мне!</h1>
                     <div class="content">
-                        <form action="#" class="form_block">
+                        <form action="#" class="form_block" method="POST">
                             <div class="form_row cf">
                                 <div class="text_block left_col">
                                     <label for="form_name" class="label">
                                         Имя
                                     </label>
-                                    <input type="text" class="input" id="form_name" placeholder="Как к вам обращаться">
+                                    <div class="input_block">
+                                        <input type="text" class="input" id="form_name" placeholder="Как к Вам обращаться">
+                                    </div>
                                 </div>
                                 <div class="text_block right_col">
                                     <label for="form_email" class="label">
                                         E-mail
                                     </label>
-                                    <input type="text" class="input" id="form_email" placeholder="Куда мне писать">
+                                    <div class="input_block">
+                                        <input type="text" class="input" id="form_email" placeholder="Куда мне писать">
+                                    </div>
                                 </div>
                             </div>
                             
                             <div class="form_row">
                                 <label for="form_letter" class="label">Сообщение</label>
-                                <textarea class="input textarea" id="form_letter" placeholder="Кратко в чём суть"></textarea>
+                                <div class="input_block">
+                                    <textarea class="input textarea textarea_feedback" id="form_letter" placeholder="Кратко в чём суть"></textarea>
+                                </div>
                             </div>
                             
                             <label for="form_captcha" class="label">Введите код, указанный на картинке</label>
@@ -87,13 +93,15 @@
                                     <div class="captcha"></div>
                                 </div>
                                 <div class="text_block right_col">
-                                    <input type="text" class="input" id="form_captcha" placeholder="Введите код">
+                                    <div class="input_block">
+                                        <input type="text" class="input" id="form_captcha" placeholder="Введите код">
+                                    </div>
                                 </div>
                             </div>
                             
                             <div class="form_row cf">
-                                <button class="form_button ok_button left_col" type="submit">Отправить</button>
-                                <button class="form_button cancel_button right_col" type="reset">Очистить</button>
+                                <button class="form_button ok_button left_col" type="submit" id="send_feedback">Отправить</button>
+                                <button class="form_button cancel_button right_col" type="reset" id="reset_feedback">Очистить</button>
                             </div>
                         </form>
                     </div>
