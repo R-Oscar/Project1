@@ -1,31 +1,79 @@
 $(document).ready(
 	function() {
 		// Объявление модуля
-		var myModule = (function () {
-			var _ttCounter = 0;
-			var _ttOutlineColor = '#e0ad9a';
-			var elements = 	{
-								name: $('#project_name'), 
-								pic: $('#project_picture'), 
-								url: $('#project_url'), 
-								desc: $('#project_desc')
-						 	};
-			// Инициализирует наш модуль
-			function init () {
+		var myModule = (function() {
+			var elements = {
+				name: $('#project_name'),
+				pic: $('#project_picture'),
+				url: $('#project_url'),
+				desc: $('#project_desc')
+			};
+
+			var elements_message = {
+				name: "введите название",
+				pic: "изображение",
+				url: "ссылка на проект",
+				desc: "описание проекта"
+			}
+
+			var feedback_elements = {
+				name: $('#form_name'),
+				mail: $('#form_email'),
+				msg: $('#form_letter'),
+				captcha: $('#form_captcha')
+			};
+
+			var feedback_message = {
+				name: "укажите имя",
+				mail: "введите адрес почты",
+				msg: "заполните письмо",
+				captcha: "введите символы"
+			}
+
+			var feedback_position = {
+				name: 'left',
+				mail: 'right',
+				msg: 'left',
+				captcha: 'right'
+			}
+
+			var feedback_caption = {
+					name: 'Как к Вам обращаться',
+					mail: 'Куда мне писать',
+					msg: 'Кратко в чём суть',
+					captcha: 'Введите код'
+				}
+				// Инициализирует наш модуль
+			function init() {
 				//console.log("Main module initialized");
 				_setUpListners();
 			};
 
 			// Прослушивает события 
-			function _setUpListners () {
+			function _setUpListners() {
 				// Вызов модального окна
 				$('#new_project').on('click', _showModal);
+
+				// Вызов окна авторизации
+				$('#login').on('click', _showAuth);
+
 				// Вызов обработчика формы
 				$('#send_project_form').on('click', _validateFields);
+
+				// Сброс формы обратной связи
+				$('#reset_feedback').on('click', function(e) {
+					tooltips.removeToolTips(feedback_elements);
+					$.each(feedback_elements, function(index, val) {
+						val.attr('placeholder', feedback_caption[index]);
+					});
+				})
+
 				// Удаление тултипа при изменении инпутов
-				$('input, textarea').on('keydown', function (e) {
-					_removeToolTip($(this));
+				$('input, textarea').on('keydown', function(e) {
+					tooltips.removeToolTip($(this));
 				});
+
+				// Обработчик при выборе / отмены выбора файла
 				$('#file').change(function(event) {
 					var path = $.trim($(this).val());
 					var caption = '';
@@ -33,104 +81,67 @@ $(document).ready(
 					{
 						caption = 'Загрузите изображение';
 						elements.pic.val('');
-					}
-					else
-					{
-						if (_hasToolTip(elements.pic))
-							_removeToolTip(elements.pic);
+					} else {
+						if (tooltips.hasToolTip(elements.pic))
+							tooltips.removeToolTip(elements.pic);
 						elements.pic.val(path);
 						caption = path;
 					}
 					$("label.input").text(caption);
 				});
-				// alert(($.browser.msie) ? "IE" : "NOT IE");
+
+				// Обработка обратной связи
+				$('#send_feedback').click(_validateFeedBack);
 
 				// IE8 FIX: Label for
 				if ($.browser.msie) {
-				  	$("label").click(function(){
-					    if ($(this).attr("for") != "")
-					        $("#" + $(this).attr("for")).click();
-						}
-					);
+					$("label").click(function() {
+						if ($(this).attr("for") != "")
+							$("#" + $(this).attr("for")).click();
+					});
 				}
 			};
 
-		 	// Открытие модального окна
-			_showModal = function (e) {
+			// Открытие модального окна
+			_showModal = function(e) {
 				e.preventDefault();
 				//console.log('Activated popup');
 				$('#add_project').bPopup({
 					speed: 650,
-					transition: 'slideDown',
-					onClose: _removeToolTips
+					transition: 'fadeIn',
+					onClose: function() {
+						tooltips.removeToolTips(elements);
+					}
 				});
 			};
+
+			// Открытие окна авторизации
+			_showAuth = function(e) {
+				$('#auth').bPopup({
+					speed: 650,
+					transition: 'fadeIn',
+				})
+			}
 
 			// Валидация формы
-			_validateFields = function (e) {
+			_validateFields = function(e) {
 				e.preventDefault();
-				var name = elements.name.val();
-				var pic = elements.pic.val();
-				var url = elements.url.val();
-				var desc = elements.desc.val();
-
-				if ($.trim(name) === '')
-				{
-					_createToolTip(elements.name, 'введите название');
-				}
-
-				if ($.trim(pic) === '')
-				{
-					_createToolTip(elements.pic, 'изображение');
-				}
-
-				if ($.trim(url) === '')
-				{
-					_createToolTip(elements.url, 'ссылка на проект');
-				}
-
-				if ($.trim(desc) === '')
-				{
-					_createToolTip(elements.desc, 'описание проекта');
-				}
+				$.each(elements, function(index, val) {
+					_checkField(val, elements_message[index], 'left');
+				});
 			};
 
-			// Создание тултипа
-			_createToolTip = function (element, text) {
-				element.css('outline', '1px solid ' + _ttOutlineColor);
-				var wrapper = element.parent();
-				wrapper.append('<div class="error_block tooltip' + _ttCounter + '">' + text + '</div>');
-				var left = wrapper.find('div').width();
-				var tooltip = $('.tooltip' + _ttCounter);
-				tooltip.css({
-					'top': '8px',
-					'left': -left - 17 + 'px'
+			// Валидация обратной связи
+			_validateFeedBack = function(e) {
+				e.preventDefault();
+				$.each(feedback_elements, function(index, val) {
+					_checkField(val, feedback_message[index], feedback_position[index]);
 				});
-
-				_ttCounter++;
 			}
 
-			// Удаление тултипа
-			_removeToolTip = function (element) {
-				element.css('outline', 'none');
-				element.parent().find('div.error_block').remove();
-			}
-
-			// Удаление всех тултипов
-			_removeToolTips = function () {
-				// console.log('removing all tooltips');
-				$.each(elements, function(index, val) {
-					 _removeToolTip(val);
-					 val.val('');
-				});
-
-				$("label.input").text('Загрузите изображение');
-				_ttCounter = 0;
-			}
-
-			// Есть ли тултип у элемента
-			_hasToolTip = function (element) {
-				return element.parent().find('div.error_block') !== '';
+			_checkField = function(field, message, position) {
+				if ($.trim(field.val()) === '')
+					tooltips.createToolTip(field, message, position);
 			}
 
 			// Возвращаем объект (публичные методы) 
@@ -141,6 +152,6 @@ $(document).ready(
 		})();
 
 		// Вызов модуля
-		myModule.init();		
+		myModule.init();
 	}
 )

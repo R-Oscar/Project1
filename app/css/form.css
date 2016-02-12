@@ -74,3 +74,89 @@
 .form_button:focus {
     outline: none;
 }
+
+.textarea {
+    resize: none;
+}
+
+.error_block, .error_block_right {
+    background-image: url(../images/err_mid.png);
+    position: absolute;
+    font-family: 'open_sanssemibold';
+    font-size: 12px;
+    color: #9a4e32;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
+    padding: 5px 3px;
+    box-sizing: border-box;
+    height: 27px;
+}
+
+.error_block:before {
+    background-image: url(../images/err_start.png);
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 27px;
+    left: -4px;
+    top: 0px;
+}
+
+.error_block:after {
+    background-image: url(../images/err_end.png);
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 27px;
+    right: -10px;
+    top: 0px;
+}
+
+.error_block_right:before {
+    background-image: url(../images/err_end_r.png);
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 27px;
+    left: -10px;
+    top: 0px;
+}
+
+.error_block_right:after {
+    background-image: url(../images/err_start_r.png);
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 27px;
+    right: -4px;
+    top: 0px;
+}
+
+.textarea_portfolio {
+    height: 110px;
+    padding: 10px 10px 2px 10px;
+}
+
+.textarea_feedback {
+	height: 180px;
+}
+
+.form_row {
+    margin-bottom: 15px;
+}
+
+.left_col {
+    float: left;
+}
+
+.right_col {
+    float: right;
+}
+
+.form_block {
+    width: 400px;
+    margin: 0px auto;
+}
+
+.text_block {
+    width: 190px;
+}

@@ -9,37 +9,19 @@
     <link rel="icon" href="images/favicon.ico">
     <!-- CSS -->
 
-    <!-- build:css css/vendor.min.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower/normalize-css/normalize.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
+    <link rel="stylesheet" href="css/vendor.min.css">
 
-    <!-- build:css css/main.min.css -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/sidebar1.css">
-    <link rel="stylesheet" href="css/sidebar2.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/content.css">
-    <link rel="stylesheet" href="css/content-feedback.css">
-    <link rel="stylesheet" href="css/content-portfolio.css">
-    <link rel="stylesheet" href="css/form.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="css/main.min.css">
 
-    <!-- build:css fonts/fonts.min.css -->
-    <link rel="stylesheet" href="fonts/stylesheet.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="fonts/fonts.min.css">
 
-    <!--  build:js js/modernizr.min.js -->
-    <script src="js/vendor/modernizr.js"></script>
-    <!-- endbuild -->
+    <script src="js/modernizr.min.js"></script>
 </head>
 <body class="background">
         <div class="wrapper">
             <header class="header">
                 <div class="header_wrapper cf">
-                    <a href="/" class="logo_container">
+                    <a href="index.html" class="logo_container">
                         <img src="images/logo.png" alt="LoftSchool. От мыслителя к создателю.">
                     </a>
                     <ul class="social_media">
@@ -78,31 +60,25 @@
                 <div class="content_wrapper">
                     <h1 class="caption">У Вас есть интересный проект? Напишите мне!</h1>
                     <div class="content">
-                        <form action="#" class="form_block" method="POST">
+                        <form action="#" class="form_block">
                             <div class="form_row cf">
                                 <div class="text_block left_col">
                                     <label for="form_name" class="label">
                                         Имя
                                     </label>
-                                    <div class="input_block">
-                                        <input type="text" class="input" id="form_name" placeholder="Как к Вам обращаться">
-                                    </div>
+                                    <input type="text" class="input" id="form_name" placeholder="Как к вам обращаться">
                                 </div>
                                 <div class="text_block right_col">
                                     <label for="form_email" class="label">
                                         E-mail
                                     </label>
-                                    <div class="input_block">
-                                        <input type="text" class="input" id="form_email" placeholder="Куда мне писать">
-                                    </div>
+                                    <input type="text" class="input" id="form_email" placeholder="Куда мне писать">
                                 </div>
                             </div>
                             
                             <div class="form_row">
                                 <label for="form_letter" class="label">Сообщение</label>
-                                <div class="input_block">
-                                    <textarea class="input textarea textarea_feedback" id="form_letter" placeholder="Кратко в чём суть"></textarea>
-                                </div>
+                                <textarea class="input textarea" id="form_letter" placeholder="Кратко в чём суть"></textarea>
                             </div>
                             
                             <label for="form_captcha" class="label">Введите код, указанный на картинке</label>
@@ -111,15 +87,13 @@
                                     <div class="captcha"></div>
                                 </div>
                                 <div class="text_block right_col">
-                                    <div class="input_block">
-                                        <input type="text" class="input" id="form_captcha" placeholder="Введите код">
-                                    </div>
+                                    <input type="text" class="input" id="form_captcha" placeholder="Введите код">
                                 </div>
                             </div>
                             
                             <div class="form_row cf">
-                                <button class="form_button ok_button left_col" type="submit" id="send_feedback">Отправить</button>
-                                <button class="form_button cancel_button right_col" type="reset" id="reset_feedback">Очистить</button>
+                                <button class="form_button ok_button left_col" type="submit">Отправить</button>
+                                <button class="form_button cancel_button right_col" type="reset">Очистить</button>
                             </div>
                         </form>
                     </div>
@@ -134,19 +108,9 @@
             </div>
         </footer>
         
-        <!-- build:js js/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower/jquery/jquery.js"></script>
-        <script src="bower/normalize-strings/normalize.js"></script>
-        <script src="bower/bPopup/jquery.bpopup.js"></script>
-        <script src="bower/jquery-placeholder/jquery.placeholder.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
+        <script src="js/vendor.js"></script>
 
-        <!-- build:js js/main.js -->
-        <script src="js/tooltips.js"></script>
         <script src="js/main.js"></script>
-        <!-- endbuild -->
         <script>$('input, textarea').placeholder({customClass:'ie-placeholder'});</script>
 </body>
 </html>
